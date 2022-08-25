@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Div1=styled.div`
 
   height: 27px;
-    width: 100vw;
+    width: 98.9vw;
     background: #eeeeee;
     display: flex;
     align-items: center;
