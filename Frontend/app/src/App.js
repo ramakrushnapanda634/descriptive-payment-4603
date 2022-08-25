@@ -2,7 +2,7 @@ import { Routes ,Route} from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import Home from "./Components/Home/Home"
+import {Home} from "./Components/Home/Home"
 function App() {
   return (
     <div className="App">
