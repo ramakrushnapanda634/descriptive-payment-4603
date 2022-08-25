@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from "styled-components"
 import {IoBagOutline} from "react-icons/io5"
+import {SearchIcon} from "@chakra-ui/icons"
 import { VscHeart } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
+
 import {Link} from "react-router-dom"
-import { IoSearchOutline } from "react-icons/io5";
+
 //import {Link} from "react-router-dom"
 const Div5 = styled.div`
 margin-top:20px;
@@ -31,30 +33,48 @@ const Div6 = styled.div`
   margin-left:50%
   justify-content: space-around;
 `;
+const LINK=styled.a`
+text-decoration: none;
+color:black;
+font-size:17px;
+font-weight:bold;
+`
+const Input=styled.input`
+height:80px
+width:60px
+`
 const Navbar = () => {
   return (
-    
     <Div5>
       <Div6>
         <div>
-          <img style={{width:"150px"}}
+          <img
             src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg"
             alt="logo"
           />
         </div>
-        <div> <Link to="/men">Men</Link> 
+        <div>
+          <LINK href="">Men</LINK>
         </div>
-        <div>WOMEN</div>
-        <div>MOBILE COVERS</div>
+        <div>
+          <LINK href=""> WOMEN</LINK>
+        </div>
+        <div>
+          <LINK href=""> MOBILE COVERS</LINK>
+        </div>
       </Div6>
       <Div7>
-        <div>
+        <div style={{}}>
+          <SearchIcon
+            style={{ heiht: "10px", width: "10px", marginLeft: "-0px" }}
+          />
           <input
+            style={{ height: "26px", width: "300px", textAlign: "center" }}
             type="text"
-            placeholder="    search by product,category or collection"
-          >
-            {/* <IoSearchOutline /> */}
-          </input>
+            name=""
+            id=""
+            placeholder="search by product,category or collection"
+          />
         </div>
 
         <div>
@@ -68,7 +88,6 @@ const Navbar = () => {
         </div>
       </Div7>
     </Div5>
-    
   );
 }
 

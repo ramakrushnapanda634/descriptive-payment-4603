@@ -20,6 +20,7 @@ const Div2 = styled.div`
 const Div3 = styled.div`
   display: flex;
   gap: 20px;
+  cursor: pointer;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.8);
 `;
@@ -27,6 +28,7 @@ const Div4 = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.8);
 `;
