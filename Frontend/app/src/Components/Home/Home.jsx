@@ -54,12 +54,53 @@ font-size:25px;
   font-weight:600;
   letter-spacing:3px;
 }
-`
+`;
+const Heading1 = styled.div`
+margin-top:16rem;
+text-align:center;
+font-size:25px;
+
+& p{
+  font-weight:600;
+  letter-spacing:1px;
+}
+`;
+const Heading2 = styled.div`
+text-align:center;
+font-size:22px;
+
+& p{
+  font-weight:700;
+  letter-spacing:2px;
+}
+`;
+const Heading3 = styled.div`
+text-align:center;
+font-size:22px;
+
+& p{
+  font-weight:600;
+  letter-spacing:2px;
+}
+`;
 const Wrapper = styled.div`
   width: 100%;
   margin: auto;
   display: flex;
   gap: 1px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin-top:30px;
+
+  &::-webkit-scrollbar{
+      display: none;
+  }
+`;
+const Wrapper1 = styled.div`
+  width: 100%;
+  margin: auto;
+  display: flex;
+  gap: 7px;
   overflow-x: scroll;
   scroll-behavior: smooth;
   margin-top:30px;
@@ -112,11 +153,86 @@ const Card = styled.div`
     padding-bottom:10px;
     text-align:center;
     margin-top:-10px;
-     }
+     } 
+`;
+const Card1 = styled.div`
 
-     
+   height:160px;
+   width:70vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    width:16.4vw;
+    height:55vh;
+ }
+
+`;
+const Card2 = styled.div`
+margin-top:13rem;
+   height:160px;
+   width:70vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    width:16.4vw;
+    height:55vh;
+ }
+
 `;
 
+const Card3 = styled.div`
+   width:19.7vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    margin-left:1.3rem;
+    width:18.1vw;
+    height:50vh;
+ }
+ 
+`;
+const Card4 = styled.div`
+   width:24vw;
+   display:flex;
+
+   & img{
+    margin-left:.5rem;
+    width:24vw;
+    height:60vh;
+ }
+ 
+`;
+
+const Twoimg = styled.div`
+   height:65vh;
+   width:49.3vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    width:49.3vw;
+    height:65vh;
+ }
+`;
+const Twoimg1 = styled.div`
+   height:65vh;
+   width:49.3vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    width:49.3vw;
+    height:65vh;
+ }
+`;
+
+const View = styled.div`
+text-align:center;
+
+`;
 
 
 
@@ -164,6 +280,23 @@ export const Home = () => {
 
   ];
 
+  const images1 = [
+   
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/just-arrived-polo-1661102739.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/revamped-static-banners-jeans-men-1661422041.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/vest-2-1661430419.gif",
+      
+    },
+
+  ];
+
 
   const cardimg = [
     {
@@ -206,6 +339,132 @@ export const Home = () => {
     },
 
   ];
+  const cardimg1 = [
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-men-printed-1657526330.jpg",
+    
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-PlainTees-1657526329.jpg",
+          
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-OversizedTees-1657526328.jpg",
+            
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Kurtas-1657526328.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Vests-1657526332.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Shorts-1657526331.jpg",
+      },
+   
+
+  ];
+
+  const cardimg2 = [
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Shirts-1657526330.jpg",
+    
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Joggers-1657526328.jpg",
+          
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-sweatshirts-m-1660748009.jpg",
+            
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Boxers-1657526325.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Covers-1657526326.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/category-box-new-final-MEN-Bags-1657526325.jpg",
+      },
+   
+
+  ];
+
+  const twocardimg = [
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/b1g1-mid-banner-1658840210.jpg",
+    
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/undrdawg-mid-banner2-1660818217.jpg",
+          
+    },
+    ];
+    const twocardimg1 = [
+      {
+        img: "https://images.bewakoof.com/uploads/grid/app/sweatshirt-men-1660737200.jpg",
+      
+      },
+      {
+        img: "https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2022-house-of-dragon-02-1661322716.jpg",
+            
+      },
+      ];
+
+
+      const cardimg3 = [
+        {
+          img: "https://images.bewakoof.com/t320/aot-founding-titan-half-sleeve-t-shirt-518256-1657791545-1.jpg",
+        title:"₹349"
+             },
+        {
+          img: "https://images.bewakoof.com/t320/men-s-black-konshu-graphic-printed-t-shirt-537368-1661332213-1.jpg",
+          title:"₹329"
+   
+        },
+        {
+          img: "https://images.bewakoof.com/t320/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg",
+          title:"₹449"
+   
+        },
+        {
+          img: "https://images.bewakoof.com/t320/men-black-gohan-printed-t-shirt-516915-1658730861-1.jpg",
+          title:"₹599"
+
+        },
+        {
+          img: "https://images.bewakoof.com/t320/men-s-blue-konshu-graphic-printed-oversized-t-shirt-537366-1661330517-1.jpg",
+          title:"₹399"
+
+        },
+      
+    
+      ];
+      
+      const cardimg4 = [
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/budget-buys-2-x-2-banner-2-1661243826.jpg",
+             },
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/budget-buys-2-x-2-vests-men-1661243955.jpg",
+   
+        },
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/budget-buys-2-x-2-banner-men-shorts---Copy-1661243828.jpg",
+   
+        },
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/budget-buys-2-x-2-new-backpacks---Copy-1661243828.png",
+        },
+        
+      
+    
+      ];
   return (
     <>
         <MainDiv  id ="mainDiv">
@@ -251,6 +510,131 @@ export const Home = () => {
     <Heading id="heading">
     <p>POPULAR CATEGORIES</p>
     </Heading>
+    <Card1 id="card1">
+    {
+      cardimg1.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+
+     }
+    </Card1>
+
+    <Card2 id="card2">
+    {
+      cardimg2.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+
+     }
+    </Card2>
+
+    <Heading1 id="heading1">
+    <p>DISCOUNT PE DISCOUNT</p>
+    </Heading1>
+
+
+    <Twoimg id="twoimg">
+    {
+      twocardimg.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+     }
+    </Twoimg>
+    <Twoimg1 id="twoimg">
+    {
+      twocardimg1.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+     }
+    </Twoimg1>
+
+    <Heading2 id="heading2">
+    <p>BESTSELLERS FOR MEN</p>
+    </Heading2>
+
+    <Card3 id="card3">
+    {
+      cardimg3.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+                 <h4>{elem.title}</h4>
+              </div>
+          </>
+        )
+      })
+
+     }
+    </Card3>
+
+
+    <View  id ="view">
+    <Link to="/" style={{color:"rgb(71,166,171)",textTransform:"uppercase"}}><h4>View all</h4></Link>
+    </View>
+
+
+    <Wrapper1 id="wrapper1">
+      {images1.map((e) => (
+        <Idiv key={e.img}>
+          <div>
+            <img src={e.img} alt="" />
+          </div>
+        </Idiv>
+      ))}
+    </Wrapper1>
+
+
+    <Heading3 id="heading3">
+    <p>BEST BARGAIN CORNER</p>
+    </Heading3>
+
+    <Card4 id="card4">
+    {
+      cardimg4.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+                 <h4>{elem.title}</h4>
+              </div>
+          </>
+        )
+      })
+
+     }
+    </Card4>
+
+
+
     </>
 
     
