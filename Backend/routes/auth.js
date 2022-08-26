@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 router.post("/signup", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password ,mobileNumber} = req.body;
   const user = await User.findOne({ email, password });
   if (user) {
     return res.status(400).send("User already exists");
@@ -14,6 +14,7 @@ router.post("/signup", async (req, res) => {
     name,
     email,
     password,
+    mobileNumber,
   });
   await newUser.save();
   return res.send("sign up successfully");
@@ -38,6 +39,7 @@ router.post("/login", async (req, res) => {
   //return res.send("signin")
   return res.send({ message: "login successfully", token: token });
 });
+  
 router.post("/verifyotp", (req, res) => {
   const otp = Math.floor(Math.random() * 10000);
   // const { otp } = req.body;
