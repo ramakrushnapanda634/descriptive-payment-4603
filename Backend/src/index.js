@@ -17,4 +17,4 @@ app.use("/product", ProductsRouter);
 
 app.listen(config.get("port"), () => {
     console.log(`Server started on port ${config.get("port")}`);
-})
+});
