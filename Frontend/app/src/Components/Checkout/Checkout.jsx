@@ -15,6 +15,7 @@ import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 const Checkout = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
     <Center>
@@ -93,7 +94,7 @@ const Checkout = () => {
               </Text>
             </Box>
             <Box padding={'3px'} border='1px solid #CDCDCC'>
-              <Button color='#42A2A2' onClick={onOpen} size='xs' width='100%' fontSize='9px'>
+              <Button color='#42A2A2'  size='xs' width='100%' fontSize='9px'> {/*onClick={onOpen}*/}
                 <Box width='100%' sx={{display: 'flex', justifyContent: 'space-between'}}>
                   <Text>
                     Have a Coupon / Referral / Gift Card ? 
@@ -105,7 +106,7 @@ const Checkout = () => {
                   </Text>
                 </Box>
               </Button>
-              <Modal size='xs' isOpen={isOpen} onClose={onClose}>
+              {/* <Modal size='xs' isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
                   <ModalHeader fontSize='12px'>
@@ -124,7 +125,7 @@ const Checkout = () => {
                     </Button>
                   </ModalFooter>
                 </ModalContent>
-              </Modal>
+              </Modal> */}
             </Box>
             <Box border='1px solid #CDCDCC'>
               <Box padding='5px 12px' bgColor='#F5F4F4'>
