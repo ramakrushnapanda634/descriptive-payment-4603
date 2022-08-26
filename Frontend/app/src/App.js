@@ -14,9 +14,12 @@ function App() {
     <Header/>
      <Navbar/> 
      <Routes>
-<Route path="/" element={<Home/>}></Route>
+         <Route path="/" element={<Home/>}></Route>
       </Routes>
-      <Products/>
+     <Routes>
+        <Route path="/products" element={<Products />}></Route>
+      </Routes>
+      
     </div>
   );
 }
