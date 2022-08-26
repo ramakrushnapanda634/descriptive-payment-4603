@@ -4,6 +4,8 @@ const config = require("config");
 const ProductsRouter = require("./routes/products.routes");
 const cors = require("cors");
 
+// NODE_ENV=prod npm run start
+// NODE_ENV=dev npm run start
 const conn = mongoose.connect(config.get("db.url"));
 // console.log('confi url:', config.get("db.url"))
 

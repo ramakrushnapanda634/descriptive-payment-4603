@@ -2,16 +2,27 @@ import React, { useRef, useState } from 'react'
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Container, Flex, Heading, Text, Grid, } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getProductsAPI } from '../../store/products/products.actions';
+import { useDispatch, useSelector } from 'react-redux'
 
 const Products = () => {
 
   const [porductsData, setProductsData] = useState([]);
   const [selected, setSelected] = useState("");
   const [linkTag, setLinkTag] = useState("");
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const preTag = useRef("");
   const { subcategory } = useParams();
+
+  const { data } = useSelector((state) => state.products.products);
+  console.log('data:', data)
+
+  useEffect(() => {
+    dispatch(getProductsAPI());
+  }, [])
+  
 
   const sideMenu = [
     {
