@@ -5,7 +5,7 @@ export const getProductsAPI = (category) => (dispatch) => {
     dispatch({
         type: types.GET_PRODUCTS_LOADING,
     });
-    axios.get(`http://localhost:8080/product/${category}`)
+    axios.get(`https://dry-chamber-79388.herokuapp.com/product/${category}`)
         .then((r) => dispatch({
             type: types.GET_PRODUCTS_SUCCESS,
             payload: r.data,
@@ -21,7 +21,7 @@ export const getSingleProductAPI = (id) => (dispatch) => {
     });
     console.log("data fetch")
     axios
-        .get(`http://localhost:8080/product/productdetail/${id}`)
+        .get(`https://dry-chamber-79388.herokuapp.com/product/productdetail/${id}`)
         .then((r) => {
             console.log('r:', r.data)
             dispatch({

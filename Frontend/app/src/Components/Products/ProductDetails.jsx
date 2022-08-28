@@ -43,7 +43,7 @@ const ProductDetails = () => {
         //     // brand: String,
         //     // reviews: Array,
         // };
-        axios.post("http://localhost:8080/cart/", singleProduct);
+        axios.post("https://dry-chamber-79388.herokuapp.com/cart/", singleProduct);
         navigate("/checkout")
     };
 
