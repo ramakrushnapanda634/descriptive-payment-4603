@@ -4,6 +4,7 @@ import { Button, Checkbox, Icon, Input } from '@chakra-ui/react'
 import { AiFillCreditCard, AiFillWallet, AiOutlineDoubleRight, AiOutlineTransaction, AiFillBank } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartAPI } from '../../store/cart/cart.actions';
+import { useNavigate } from 'react-router-dom';
 
 const Payment = () => {
 
@@ -22,6 +23,11 @@ const Payment = () => {
     stotal += Number(e.strikedOffprice)
   })
   var discount = stotal - total
+
+  const navigate = useNavigate()
+  const toThankyou = () => {
+    navigate("../thankyou")
+  }
 
   return (
     <>
@@ -118,7 +124,7 @@ const Payment = () => {
                     </Text>
                   </Checkbox>
                 </Box>
-                <Button size='md' width="100%" colorScheme='teal'>Pay</Button>
+                <Button onClick={toThankyou} size='md' width="100%" colorScheme='teal'>Pay</Button>
               </VStack>
             </Box>
           </Box>
