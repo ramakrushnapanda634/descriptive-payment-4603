@@ -19,8 +19,8 @@ CartRouter.get("/", async (req, res) => {
 CartRouter.post("/", async (req, res) => {
     console.log('req:', req.body)
     try {
-        let product = await CartModel.insertMany(req.body)
-
+        let product = new CartModel(req.body)
+        await product.save()
         return res.status(200).send(product);
 
     } catch (error) {
