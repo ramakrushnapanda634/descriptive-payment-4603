@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from "styled-components"
-import {IoBagOutline} from "react-icons/io5"
-import {SearchIcon} from "@chakra-ui/icons"
+import { IoBagOutline } from "react-icons/io5"
+import { SearchIcon } from "@chakra-ui/icons"
 import { VscHeart } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
 
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import { Image, Text } from '@chakra-ui/react';
 
 //import {Link} from "react-router-dom"
 const Div5 = styled.div`
@@ -13,13 +14,12 @@ margin-top:20px;
 padding-left:60px;
   height: 27px;
   padding-right:60px;
-  
-  display: flex;
+display: flex;
   // align-items: center;
   justify-content: space-between;
 `;
 const Div7 = styled.div`
-  margin-top: 20px;
+  
   display: flex;
   cursor: pointer;
   gap: 20px;
@@ -33,13 +33,13 @@ const Div6 = styled.div`
   margin-left:50%
   justify-content: space-around;
 `;
-const LINK=styled.a`
+const LINK = styled.a`
 text-decoration: none;
 color:black;
 font-size:17px;
 font-weight:bold;
 `
-const Input=styled.input`
+const Input = styled.input`
 height:80px
 width:60px
 `
@@ -48,25 +48,28 @@ const Navbar = () => {
     <Div5>
       <Div6>
         <div>
-          <img
+          <Image
             src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg"
             alt="logo"
+            w={"147px"}
+            h={"20px"}
           />
         </div>
         <div>
-          <LINK href="">Men</LINK>
+          <Text textDecoration={"none"} color={"black"} fontSize={"17px"} fontWeight={"bold"}><Link to="/products/men-clothing">MEN</Link></Text>
         </div>
         <div>
-          <LINK href=""> WOMEN</LINK>
+          <Text textDecoration={"none"} color={"black"} fontSize={"17px"} fontWeight={"bold"}><Link to="/products/women-clothing">WOMEN</Link></Text>
         </div>
         <div>
-          <LINK href=""> MOBILE COVERS</LINK>
+          <Text textDecoration={"none"} color={"black"} fontSize={"17px"} fontWeight={"bold"}><Link to="/products/mobile-covers">MOBILE COVERS</Link></Text>
         </div>
       </Div6>
       <Div7>
         <div style={{}}>
           <SearchIcon
-            style={{ heiht: "10px", width: "10px", marginLeft: "-0px" }}
+            w={"18px"}
+            color={"#949494"}
           />
           <input
             style={{ height: "26px", width: "300px", textAlign: "center" }}

@@ -1,18 +1,19 @@
 import { Box, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import wishlist from "../../Assets/wishlist.svg"
 
 
 const ProductsLayout = ({ product }) => {
-    
+    const { category } = useParams();
+
     return (
         <Link
-            to={`/products/${product._id}`}
+            to={`/products/${category}/${product._id}`}
             style={{ textDecoration: "none" }}
         >
         <Box textAlign={"left"} >
-            <Image src={product.imgUrl} w={"100%"} h={"360px"} _hover={{
+            <Image src={product.imgUrl} h={"360px"} _hover={{
                 animationName: "fadeInOpacity",
                 animationIterationCount:"1",
                 animationTimingFunction:"linear",

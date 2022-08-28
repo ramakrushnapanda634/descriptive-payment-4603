@@ -16,3 +16,17 @@ export const getCartAPI = () => (dispatch) => {
         }))
 };
 
+// export const addToCartAPI = (data) => (dispatch) => {
+//     dispatch({
+//         type: types.ADD_CART_LOADING,
+//     });
+//     axios.get(`http://localhost:8000/cart/${data}`)
+//         .then((r) => dispatch({
+//             type: types.ADD_CART_SUCCESS,
+//             payload: r.data,
+//         }))
+//         .catch((e) => dispatch({
+//             type: types.ADD_CART_ERROR,
+//         }))
+// };
+
