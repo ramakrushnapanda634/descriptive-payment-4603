@@ -1,6 +1,5 @@
 import React from "react";
 //import styles from "./Header.module.css";
-import { BsPhone } from "react-icons/bs";
 import styled from "styled-components";
 const Div1=styled.div`
 
@@ -12,14 +11,14 @@ const Div1=styled.div`
     justify-content: center;
 `
 const Div2 = styled.div`
-  width: 80%;
+  width: 70%;
   /* background-color: turquoise; */
   display: flex;
   justify-content: space-between;
 `;
 const Div3 = styled.div`
   display: flex;
-  gap: 20px;
+  gap:10px;
   cursor: pointer;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.8);
@@ -49,7 +48,7 @@ function Header() {
             
           </div>
           <div>
-            <BsPhone />
+           
              Download App
           </div>
           <div>
