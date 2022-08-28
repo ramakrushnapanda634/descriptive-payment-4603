@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Container, Flex, Heading, Text, Grid, Popover, PopoverTrigger, Button, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody, Image, } from "@chakra-ui/react";
-import { AddIcon, ChevronDownIcon, ChevronUpIcon, MinusIcon } from "@chakra-ui/icons";
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Flex, Heading, Text, Grid, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody, Image, } from "@chakra-ui/react";
+import { ChevronDownIcon, ChevronUpIcon,} from "@chakra-ui/icons";
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getProductsAPI } from '../../store/products/products.actions';
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,7 +15,7 @@ const Products = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const preTag = useRef("");
-  const { subcategory } = useParams();
+  const { category } = useParams();
  
 
   const { data } = useSelector((state) => state.products.products);
@@ -38,11 +38,11 @@ const Products = () => {
   }
 
   useEffect(() => {
-    dispatch(getProductsAPI());
-  }, []);
+    dispatch(getProductsAPI(category));
+  }, [category]);
 
   useEffect(() => {
-    findSubcategoryFromPath(subcategory)
+    findSubcategoryFromPath(category)
   }, [data])
   
 
@@ -274,21 +274,25 @@ const Products = () => {
     { item: "Price: Low to high" },
   ]
   return (
-    <Box border={"2px solid blue"} mt={"4%"}>
+    <Box mt={"4%"}>
       <Box>
         <Image src="https://images.bewakoof.com/uploads/category/desktop/thin-strip-new-2022-freebie-desktop-banner-129-1661242223.jpg" w={"100%"} />
       </Box>
-      <Box w={"75%"} m={"auto"} border={"1px solid red"} mt={"4%"}>
+      <Box w={"75%"} m={"auto"}  mt={"4%"}>
         <Box>
           <Box display={"flex"}>
-            <Heading color={"#2d2d2d"} m={"0"} p={"0"} fontSize={"26px"}>Men Clothing</Heading>
+            <Heading color={"#2d2d2d"} m={"0"} p={"0"} fontSize={"26px"}>
+              {
+                category === "men-clothing" ? "Men Clothing" : category === "women-clothing" ? "Women Clothing":"Mobile Covers"
+              }
+            </Heading>
             <Heading color={"#949494"} pl={"10px"} fontWeight={"normal"} fontSize={"24px"}>(8774)</Heading>
           </Box>
           <Box w={"117px"} h={"2px"} bgColor={"#fbd139"} display={"block"} m={"6px 0 0 2px"}>
           </Box>
         </Box>
         <Flex mt={"30px"}>
-          <Box width={"35%"} pr="10px">
+          {category === "mobile-covers" ? "":<Box width={"35%"} pr="10px">
             <Text fontSize={"12px"} m={"0 8px 0 30px"} textAlign={"left"} color={"#949494"} fontWeight={"semibold"} >
               FILTERS
             </Text>
@@ -333,7 +337,7 @@ const Products = () => {
                           {isExpanded ? (
                             <ChevronUpIcon fontSize="12px" w={"20px"} h={"20px"} />
                           ) : (
-                              <ChevronDownIcon fontSize="12px" w={"20px"} h={"20px"}  />
+                            <ChevronDownIcon fontSize="12px" w={"20px"} h={"20px"} />
                           )}
                         </AccordionButton>
                       </h2>
@@ -375,7 +379,7 @@ const Products = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </Box>
+          </Box>}
           <Box width={"100%"} pl="10px">
             <Box
               display={"flex"}

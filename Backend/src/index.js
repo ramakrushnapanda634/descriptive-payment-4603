@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const config = require("config");
 const ProductsRouter = require("./routes/products.routes");
+const CartRouter = require("./routes/carts.routes");
 const cors = require("cors");
 
 // NODE_ENV=prod npm run start
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/product", ProductsRouter);
+app.use("/cart", CartRouter);
 
 app.listen(config.get("port"), () => {
     console.log(`Server started on port ${config.get("port")}`);
