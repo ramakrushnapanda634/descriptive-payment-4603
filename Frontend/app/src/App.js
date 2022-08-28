@@ -11,6 +11,7 @@ import ProductDetails from './Components/Products/ProductDetails';
 
 import Signin from "./Components/Auth/Signin";
 import Signup from "./Components/Auth/SignUp";
+import Thankyou from './Components/Payment/Thankyou';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/payment" element={<Payment/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/thankyou" element={<Thankyou/>}></Route>
       </Routes>
       
     </div>
