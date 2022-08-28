@@ -6,7 +6,7 @@ export const getCartAPI = () => (dispatch) => {
     dispatch({
         type: types.GET_CART_LOADING,
     });
-    axios.get(`http://localhost:8080/cart`)
+    axios.get(`https://dry-chamber-79388.herokuapp.com/cart/`)
         .then((r) => dispatch({
             type: types.GET_CART_SUCCESS,
             payload: r.data,
