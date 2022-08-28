@@ -2,13 +2,15 @@ import { AddIcon, ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { Accordion, AccordionButton, AccordionItem, Box, Image, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleProductAPI } from '../../store/products/products.actions';
 import wishlist from "../../Assets/wishlist.svg"
+import axios from 'axios';
 
 
 const ProductDetails = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [img, setImg] = useState("");
 
     const { data: singleProduct, loading } = useSelector((state) => state.products.singleProduct);
@@ -25,24 +27,24 @@ const ProductDetails = () => {
     const Menu = ["SAVE EXTRA WITH 3 OFFERS", "PRODUCT DESCRIPTION", "15 DAY RETURNS & EXCHANGE", "DELIVERY DETAILS"]
     
     const handleAddToCart = () => {
+        // console.log('handleAddToCart:', singleProduct)
         // const addData = {
-        //     productId: item.id,
-        //     count: 1,
-        //     imgUrl: item.imgUrl,
-        //     name: item.name,
-        //     packSize: item.packSize,
-        //     price: item.price,
-        //     strikePrice: item.strikePrice,
-        //     soldOut: item.soldOut,
-        //     notifyme: item.notifyme,
-        //     category: item.category,
-        //     subCatagory: item.subCatagory,
-        //     tooltipText: item.tooltipText,
-        //     benefits: item.benefits,
-        //     description: item.description,
-        //     info: item.info,
+        //     title: singleProduct.title,
+        //     imgUrl: singleProduct.imgUrl,
+        //     // imgArray: Array,
+        //     // description: String,
+        //     // price: Number,
+        //     // strikePrice: Number,
+        //     // qty: Number,
+        //     // rating: Number,
+        //     // category: String,
+        //     // subcategory: String,
+        //     // sizes: Array,
+        //     // brand: String,
+        //     // reviews: Array,
         // };
-        dispatch()
+        axios.post("http://localhost:8080/cart/", singleProduct);
+        navigate("/checkout")
     };
 
     if (loading) return <div>Loading</div>;
@@ -144,7 +146,7 @@ const ProductDetails = () => {
                         </Box>
                     </Box>
                     <Box display={"flex"} fontSize={"14px"} fontWeight={"semibold"} mt={"20px"}>
-                        <Box display={"flex"} bgColor={"#ffd84d"} borderRadius={"3px"} h={"40px"} cursor={"pointer"} alignItems={"center"} p={"0 40px"} onClick={() => handleAddToCart}>
+                        <Box display={"flex"} bgColor={"#ffd84d"} borderRadius={"3px"} h={"40px"} cursor={"pointer"} alignItems={"center"} p={"0 40px"} onClick={() => handleAddToCart()}>
                             <Image src="https://images.bewakoof.com/web/ic-web-head-cart.svg" w={"20px"} h={"20px"} mr={"5px"} />
                             ADD TO BAG
                         </Box>

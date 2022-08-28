@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 //import {useNavigate} from "react-router-dom"
 const Div = styled.div`
@@ -45,7 +46,7 @@ width:80px
 `
 
 const Signup = ({ submitForm }) => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate();
   const [name, setname] = React.useState("");
 
   const [email, setemail] = React.useState("");
@@ -90,6 +91,7 @@ const Signup = ({ submitForm }) => {
   };
 
   return (
+    
     <Div>
       <div>
         <Div13>
@@ -176,6 +178,7 @@ const Signup = ({ submitForm }) => {
                   border: "1.5px solid black",
                 }}
                 type="submit"
+                onClick={() => navigate("/login")}
               >
                 Sign Up
               </Button>

@@ -15,16 +15,17 @@ CartRouter.get("/", async (req, res) => {
     }
 })
 
-// // get single product by id
-// CartRouter.post("/", async (req, res) => {
-//     try {
-//         let product = await CartModel.insert()
+// get single product by id
+CartRouter.post("/", async (req, res) => {
+    console.log('req:', req.body)
+    try {
+        let product = await CartModel.insertMany(req.body)
 
-//         return res.status(200).send(product);
+        return res.status(200).send(product);
 
-//     } catch (error) {
-//         return res.status(500).send({ error: error.message });
-//     }
-// });
+    } catch (error) {
+        return res.status(500).send({ error: error.message });
+    }
+});
 
 module.exports = CartRouter;
