@@ -12,14 +12,13 @@ import Signup from "./Components/Auth/SignUp";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
-      <Navbar /> */}
-      <Signup />
-      <Signin />
-      {/* <Routes>
+      <Header />
+      <Navbar /> 
+     
+       <Routes>
         <Route path="/" element={<Home />}></Route>
       </Routes>
-      <Products /> */}
+     
     </div>
   );
 }
