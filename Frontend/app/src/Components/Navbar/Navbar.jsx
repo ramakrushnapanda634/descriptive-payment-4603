@@ -5,7 +5,7 @@ import { SearchIcon } from "@chakra-ui/icons"
 import { VscHeart } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Image, Text } from '@chakra-ui/react';
 
 //import {Link} from "react-router-dom"
@@ -44,6 +44,7 @@ height:80px
 width:60px
 `
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Div5>
       <Div6>
@@ -53,6 +54,7 @@ const Navbar = () => {
             alt="logo"
             w={"147px"}
             h={"20px"}
+            onClick={() => navigate("/")}
           />
         </div>
         <div>
@@ -81,13 +83,13 @@ const Navbar = () => {
         </div>
 
         <div>
-          <FaUserAlt />
+          <FaUserAlt onClick={() => navigate("/signup")} />
         </div>
         <div>
           <VscHeart />
         </div>
         <div>
-          <IoBagOutline />
+          <IoBagOutline onClick={() => navigate("/checkout")} />
         </div>
       </Div7>
     </Div5>
