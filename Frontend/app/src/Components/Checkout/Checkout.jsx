@@ -33,7 +33,7 @@ const Checkout = () => {
   var stotal = 0
   data?.map((e) => {
     total += Number(e.price)
-    stotal += Number(e.strikePrice)
+    stotal += Number(e.strikedOffprice)
   })
   var discount = stotal - total
 
@@ -158,7 +158,7 @@ const Checkout = () => {
               </Box>
               <Box bgColor='#E9F3E4' padding='3px 8px' borderRadius='10px' width='90%' margin='6px auto'>
                 <Text fontSize='12px' color='#508A3D'>
-                    You are saving ₹ 650 on this order
+                    You are saving ₹ {discount} on this order
                 </Text>
               </Box>
               <Box display='flex' borderTop='1px solid #CDCDCC' marginTop='26px' padding='12px'>
@@ -184,7 +184,7 @@ const Checkout = () => {
                       <ModalBody>
                         <VStack gap={'4'}>
 
-                        <Input size='sm' placeholder='Full Name'/>
+                        <Input required size='sm' placeholder='Full Name'/>
                         <Input size='sm' placeholder='Mobile Number'/>
                         <Input size='sm' placeholder='Pin Code'/>
                         <Box width='100%' sx={{display: 'flex', justifyContent: 'space-between'}}>
