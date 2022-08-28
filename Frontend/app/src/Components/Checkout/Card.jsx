@@ -3,7 +3,7 @@ import { Box, Center, Image, Select, Text} from '@chakra-ui/react'
 
 const Card = ({prod}) => {
     console.log("card",prod)
-    const saved = Number(prod.strikePrice) - Number(prod.price)
+    const saved = Number(prod.strikedOffprice) - Number(prod.price)
   return (
     <>
         <Box sx={{padding: '8px 8px 0 8px', border: '1px solid #CDCDCC', borderRadius: '3px', margin:'15px 0'}}>            
@@ -12,7 +12,7 @@ const Card = ({prod}) => {
                   <Text fontSize='15px' color='#6F8CA2'>{prod.title}</Text>
                   <Box sx={{display: 'flex', fontSize: '15px'}}>
                   <Text><b>{prod.price}</b></Text>&nbsp;
-                  <Text fontSize= '12px' margin='3px 0' color='#6F8CA2'><strike>{prod.strikePrice}</strike></Text>
+                  <Text fontSize= '12px' margin='3px 0' color='#6F8CA2'><strike>{prod.strikedOffprice}</strike></Text>
                   </Box>
                   <Text fontSize= '12px' color='#579042'>You saved ₹{saved}!</Text>
                   <Box display='flex' gap='5px' margin='5px 0'>

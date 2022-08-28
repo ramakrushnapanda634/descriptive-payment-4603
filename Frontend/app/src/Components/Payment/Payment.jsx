@@ -19,7 +19,7 @@ const Payment = () => {
   var stotal = 0
   data?.map((e) => {
     total += Number(e.price)
-    stotal += Number(e.strikePrice)
+    stotal += Number(e.strikedOffprice)
   })
   var discount = stotal - total
 
@@ -166,7 +166,7 @@ const Payment = () => {
               </Box>
               <Box bgColor='#E9F3E4' padding='3px 8px' borderRadius='10px' width='90%' margin='6px auto'>
                 <Text fontSize='12px' color='#508A3D'>
-                    You are saving ₹ 650 on this order
+                    You are saving ₹ {discount} on this order
                 </Text>
               </Box>
               <Box display='flex' borderTop='1px solid #CDCDCC' marginTop='26px' padding='12px'>

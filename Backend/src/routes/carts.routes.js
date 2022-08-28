@@ -5,26 +5,26 @@ const CartRouter = Router();
 
 // get cart products by category
 CartRouter.get("/", async (req, res) => {
-    //console.log("req", req.params);
+    // console.log("req", req.params);
     try {
         const products = await CartModel.find()
-        //console.log('products:', products.length)
+        // console.log('products:', products.length)
         res.status(200).send(products);
     } catch (error) {
         res.status(500).send({ error: error.message });
     }
 })
 
-// get single product by id
-CartRouter.post("/", async (req, res) => {
-    try {
-        let product = await CartModel.insert()
+// // get single product by id
+// CartRouter.post("/", async (req, res) => {
+//     try {
+//         let product = await CartModel.insert()
 
-        return res.status(200).send(product);
+//         return res.status(200).send(product);
 
-    } catch (error) {
-        return res.status(500).send({ error: error.message });
-    }
-});
+//     } catch (error) {
+//         return res.status(500).send({ error: error.message });
+//     }
+// });
 
 module.exports = CartRouter;
