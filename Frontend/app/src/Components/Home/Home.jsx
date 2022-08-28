@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 
 
@@ -37,13 +38,21 @@ margin:auto;
 
 const Banner1 = styled.div`
 height : 200px;
-width:98vw;
-
+width:98.9vw;
 & img{
   width:98.9vw;
   padding-top:5rem;
 }
 `;
+const Banner2 = styled.div`
+height : 200px;
+width:98.9vw;
+& img{
+  width:98.9vw;
+  padding-top:1rem;
+}
+`;
+
 
 const Heading = styled.div`
 margin-top:9rem;
@@ -76,7 +85,8 @@ font-size:22px;
 `;
 const Heading3 = styled.div`
 text-align:center;
-font-size:22px;
+font-size:20px;
+margin-top:2rem;
 
 & p{
   font-weight:600;
@@ -134,21 +144,23 @@ const Idiv = styled.div`
 `;
 
 const Card = styled.div`
-   padding-left:95px;
+   padding-left:70px;
    height:160px;
-   width:70vw;
+   width:85vw;
    padding-top:30px;
    display:flex;
   
 
    & img{
-      width:120px;
+      width:80vw;
       height:160px;
-      margin:15px
+      margin:15px;
+      margin-left:80px;
+
    }
 
    & p{
-    margin-left:20px;
+    margin-left:80px;
     font-weight:500;
     padding-bottom:10px;
     text-align:center;
@@ -158,7 +170,7 @@ const Card = styled.div`
 const Card1 = styled.div`
 
    height:160px;
-   width:70vw;
+   width:98vw;
    display:flex;
    margin-left:5px;
 
@@ -171,7 +183,7 @@ const Card1 = styled.div`
 const Card2 = styled.div`
 margin-top:13rem;
    height:160px;
-   width:70vw;
+   width:98vw;
    display:flex;
    margin-left:5px;
 
@@ -183,7 +195,7 @@ margin-top:13rem;
 `;
 
 const Card3 = styled.div`
-   width:19.7vw;
+   width:98.5vw;
    display:flex;
    margin-left:5px;
 
@@ -195,7 +207,7 @@ const Card3 = styled.div`
  
 `;
 const Card4 = styled.div`
-   width:24vw;
+   width:98.5vw;
    display:flex;
 
    & img{
@@ -205,10 +217,44 @@ const Card4 = styled.div`
  }
  
 `;
+const Card5 = styled.div`
+   width:98.5vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    margin-left:1.3rem;
+    width:18.1vw;
+    height:50vh;
+ }
+ 
+`;
 
 const Twoimg = styled.div`
    height:65vh;
-   width:49.3vw;
+   width:98.5vw;
+   display:flex;
+   margin-left:5px;
+
+   & img{
+    width:49.3vw;
+    height:65vh;
+ }
+`;
+const Twoimg2 = styled.div`
+   height:65vh;
+   width:98.5vw;
+   display:flex;
+
+   & img{
+    width:49.3vw;
+    height:65vh;
+    padding-left:1rem;
+ }
+`;
+const Twoimg3 = styled.div`
+   height:65vh;
+   width:98.5vw;
    display:flex;
    margin-left:5px;
 
@@ -219,7 +265,7 @@ const Twoimg = styled.div`
 `;
 const Twoimg1 = styled.div`
    height:65vh;
-   width:49.3vw;
+   width:98.5vw;
    display:flex;
    margin-left:5px;
 
@@ -287,7 +333,7 @@ export const Home = () => {
       
     },
     {
-      img: "https://images.bewakoof.com/uploads/grid/app/revamped-static-banners-jeans-men-1661422041.jpg",
+      img: "https://images.bewakoof.com/uploads/grid/app/revamped-banners-VarsityGreen-men-02-1661515187.gif",
       
     },
     {
@@ -300,7 +346,7 @@ export const Home = () => {
 
   const cardimg = [
     {
-      img: "https://images.bewakoof.com/uploads/grid/app/New-thumbnail-DOTD-Men-1661246518.jpg",
+      img: "https://images.bewakoof.com/uploads/grid/app/New-thumbnail-DOTD-Men-1661504005.gif",
       title:"Design of the Day"
     },
     {
@@ -405,6 +451,26 @@ export const Home = () => {
           
     },
     ];
+    const twocardimg2 = [
+      {
+        img: "https://images.bewakoof.com/uploads/grid/app/play-men-banner-1660743046.jpg",
+      
+      },
+      {
+        img: "https://images.bewakoof.com/uploads/grid/app/jackets--1659349867.jpg",
+            
+      },
+      ];
+      const twocardimg3 = [
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2022-plus-size-m-1659160620.jpg",
+        
+        },
+        {
+          img: "https://images.bewakoof.com/uploads/grid/app/me-shirt-men-1658682131.jpg",
+              
+        },
+        ];
     const twocardimg1 = [
       {
         img: "https://images.bewakoof.com/uploads/grid/app/sweatshirt-men-1660737200.jpg",
@@ -440,6 +506,34 @@ export const Home = () => {
         {
           img: "https://images.bewakoof.com/t320/men-s-blue-konshu-graphic-printed-oversized-t-shirt-537366-1661330517-1.jpg",
           title:"₹399"
+
+        },
+      
+    
+      ];
+       const cardimg5 = [
+        {
+          img: "https://images.bewakoof.com/t320/men-s-black-t-shirt-106-1659608016-5.jpg",
+        title:"₹349"
+             },
+        {
+          img: "https://images.bewakoof.com/t320/keep-listening-full-sleeve-t-shirt-465228-1655749251-1.jpg",
+          title:"₹399"
+   
+        },
+        {
+          img: "https://images.bewakoof.com/t320/men-s-full-sleeve-t-shirts-1094-1659608683-1.jpg",
+          title:"₹399"
+   
+        },
+        {
+          img: "https://i0.wp.com/indrajeetprint.com/wp-content/uploads/2022/06/RA74-ANIMATION-1.gif?fit=250%2C313&ssl=1",
+          title:"₹349"
+
+        },
+        {
+          img: "https://images.bewakoof.com/t640/cap-marvel-3-4th-sleeve-slim-fit-t-shirt-avl-321857-1656194569-1.gif",
+          title:"₹349"
 
         },
       
@@ -633,7 +727,77 @@ export const Home = () => {
      }
     </Card4>
 
+    <Heading3 id="heading3">
+    <p>CLEARANCE ZONE</p>
+    </Heading3>
 
+    <Card5 id="card5">
+    {
+      cardimg5.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+                 <h4>{elem.title}</h4>
+              </div>
+          </>
+        )
+      })
+
+     }
+    </Card5>
+
+    <View  id ="view">
+    <Link to="/" style={{color:"rgb(71,166,171)",textTransform:"uppercase"}}><h4>View all</h4></Link>
+    </View>
+
+    <Heading3 id="heading3">
+    <p>THE STOOPID COLLECTION</p>
+    </Heading3>
+
+    <Twoimg2 id="twoimg">
+    {
+      twocardimg2.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+     }
+    </Twoimg2>
+
+    <Twoimg3 id="twoimg">
+    {
+      twocardimg3.map((elem)=>{
+        return(
+          <>
+              <div>
+                 <img src ={elem.img} alt=""/>
+               
+              </div>
+          </>
+        )
+      })
+     }
+    </Twoimg3>
+
+    <Banner id="banner">
+        <img src="https://images.bewakoof.com/uploads/grid/app/desktop---strip-1440---x-150---tribe-1634552003.png" alt=""/>
+    </Banner>
+    <Heading3 id="heading3">
+    <p>Customize your T-shirts
+    </p>
+    </Heading3>
+    <Banner2 id="banner1">
+        <img src="https://images.bewakoof.com/uploads/grid/app/design-survey-desktop-ticker-banner-1646808890.gif" alt=""/>
+    </Banner2>
+
+<Footer/>
+    
 
     </>
 
